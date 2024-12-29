@@ -5,13 +5,13 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Mahasiswa(
-    val nim: String? = null,
-    val nama: String? = null,
-    val alamat: String? = null,
+    val nim: String,
+    val nama: String,
+    val alamat: String,
 
     @SerialName("jenis_kelamin")
-    val jenisKelamin: String? = null,
+    val jenisKelamin: String,
 
-    val kelas: String? = null,
-    val angkatan: String? = null
+    val kelas: String,
+    val angkatan: String
 )
