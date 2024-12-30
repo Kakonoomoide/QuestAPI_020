@@ -9,3 +9,4 @@ detail data
 
 update data
 ![Screenshot_1735527738](https://github.com/user-attachments/assets/3bc0d619-f76b-47ea-891b-616d7a6f9aa0)
+![Screenshot_1735528793](https://github.com/user-attachments/assets/11f3f947-e48e-4a3e-ac7e-c0317428de5a)
