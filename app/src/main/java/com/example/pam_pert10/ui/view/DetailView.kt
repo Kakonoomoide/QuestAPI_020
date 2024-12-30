@@ -2,6 +2,7 @@ package com.example.pam_pert10.ui.view
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -19,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -108,21 +110,25 @@ fun ItemDetailMhs(
     Card(
         modifier = modifier.padding(16.dp),
         shape = MaterialTheme.shapes.medium,
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
     ) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
             ComponentDetailMhs(judul = "NIM", isinya = mahasiswa.nim)
-            Divider(modifier = Modifier.padding(vertical = 8.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Nama", isinya = mahasiswa.nama)
-            Divider(modifier = Modifier.padding(vertical = 8.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Alamat", isinya = mahasiswa.alamat)
-            Divider(modifier = Modifier.padding(vertical = 8.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jenisKelamin)
-            Divider(modifier = Modifier.padding(vertical = 8.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Kelas", isinya = mahasiswa.kelas)
-            Divider(modifier = Modifier.padding(vertical = 8.dp))
+            Spacer(modifier =Modifier.padding(5.dp))
             ComponentDetailMhs(judul = "Angkatan", isinya = mahasiswa.angkatan)
         }
     }
@@ -141,14 +147,13 @@ fun ComponentDetailMhs(
         Text(
             text = judul,
             fontSize = 16.sp,
-            fontWeight = FontWeight.SemiBold,
-            color = MaterialTheme.colorScheme.primary
+            fontWeight = FontWeight.Bold,
+            color = Color.Gray
         )
         Text(
             text = isinya,
             fontSize = 18.sp,
-            fontWeight = FontWeight.Medium,
-            color = MaterialTheme.colorScheme.onSurface
+            fontWeight = FontWeight.Bold,
         )
     }
 }
