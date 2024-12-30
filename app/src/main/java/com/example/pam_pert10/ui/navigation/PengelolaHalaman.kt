@@ -16,6 +16,7 @@ import com.example.pam_pert10.ui.view.DestinasiUpdate
 import com.example.pam_pert10.ui.view.DetailViewScreen
 import com.example.pam_pert10.ui.view.EntryMhsScreen
 import com.example.pam_pert10.ui.view.HomeScreen
+import com.example.pam_pert10.ui.view.UpdateMhsScreen
 
 @Composable
 fun PengelolaHalaman(
@@ -60,6 +61,21 @@ fun PengelolaHalaman(
                         popUpTo(DestinasiHome.route) { inclusive = true }
                     }
                     }
+                )
+            }
+        }
+
+        // update data
+        composable(DestinasiUpdate.routesWithArg, arguments = listOf(navArgument(DestinasiDetail.NIM){
+            type = NavType.StringType
+        }
+        )
+        ){
+            val nim = it.arguments?.getString(DestinasiUpdate.NIM)
+            nim?.let { nim ->
+                UpdateMhsScreen(
+                    onBack = { navController.popBackStack() },
+                    onNavigate = { navController.popBackStack() }
                 )
             }
         }
